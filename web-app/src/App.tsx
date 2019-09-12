@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import LandingPage from './Modules/LandingPage/LandingPage';
+import AppView from './Modules/AppComponents/AppView/AppView';
 
 const App: React.FC = () => {
   return (
     <div className="bp3-dark">
-     <LandingPage/>
+     <AppView/>
     </div>
   );
 }
