@@ -1,6 +1,15 @@
 import * as React from "react";
-import { Button, Tooltip, Tag } from "@blueprintjs/core";
-interface IProps {}
+import {
+  Button,
+  Tooltip,
+  Tag,
+  ButtonGroup,
+  AnchorButton
+} from "@blueprintjs/core";
+import "./Footer.css";
+interface IProps {
+  lastUpdated: Date;
+}
 const Footer: React.SFC<IProps> = props => {
   const onCodeClick = () => {
     var win = window.open("https://github.com/tvbyte/TedSite", "_blank");
@@ -9,33 +18,27 @@ const Footer: React.SFC<IProps> = props => {
     }
   };
 
-  return (
-    <div>
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              <Tag minimal={true}>copyright Theodore McCulloch 2019</Tag>
-            </td>
+  const generateTimeString = ():string=>{
 
-            <td>
-              <Tag minimal={true} intent="warning">
-                last updated 09-12-2019
-              </Tag>
-            </td>
-            <td>
-              <Tooltip content="link to site's source code" intent="success">
-                <Button
-                  icon="code"
-                  intent="success"
-                  minimal={true}
-                  onClick={onCodeClick}
-                />
-              </Tooltip>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    return 'last updated on '+props.lastUpdated.toLocaleString()
+  }
+
+  return (
+    <div className="footer">
+      <ButtonGroup minimal={true}>
+        <i style={{ paddingTop: 5 }}>copyright Theodore McCulloch 2019</i>
+        <Tooltip content={generateTimeString()}intent="warning">
+          <Button icon="updated" intent="warning" minimal={true} />
+        </Tooltip>
+        <Tooltip content="link to site's source code" intent="success">
+          <Button
+            icon="code"
+            intent="success"
+            minimal={true}
+            onClick={onCodeClick}
+          />
+        </Tooltip>
+      </ButtonGroup>
     </div>
   );
 };

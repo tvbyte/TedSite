@@ -7,6 +7,7 @@ interface IProps {}
 interface IState {
   browserHeight: number;
   browserWidth: number;
+  lastUpdated:Date;
 }
 
 class AppView extends React.Component<IProps, IState> {
@@ -14,7 +15,8 @@ class AppView extends React.Component<IProps, IState> {
     super(props);
     this.state = {
       browserHeight: window.innerHeight,
-      browserWidth: window.innerWidth
+      browserWidth: window.innerWidth,
+      lastUpdated: new Date(2019,9-1,12)
     };
     this.updateBrowserDim = this.updateBrowserDim.bind(this);
   }
@@ -47,7 +49,9 @@ class AppView extends React.Component<IProps, IState> {
         >
           <LandingPage />
         </div>
-        <Footer />
+        <Footer 
+          lastUpdated={this.state.lastUpdated}
+        />
       </div>
     );
   }
