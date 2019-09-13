@@ -25,6 +25,7 @@ const Header: React.SFC<IProps> = props => {
           <Popover
             content={
               <Menu>
+                <Menu.Item icon="projects" text="Projects" />
                 <Menu.Item icon="code-block" text="Programming Languages" />
                 <Menu.Item icon="function" text="Research" />
                 <Menu.Item icon="predictive-analysis" text="Academic Courses" />

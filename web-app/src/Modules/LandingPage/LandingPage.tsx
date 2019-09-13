@@ -31,7 +31,7 @@ class LandingPage extends React.Component<IProps, IState> {
           <h1>Welcome to this site</h1>
           <div>
             In the age of <b>The Profile</b> it may seem silly to have a
-            personal webiste, and that might very well be true. However here we
+            personal website, and that might very well be true. However here we
             are.
           </div>
           <div>
@@ -63,6 +63,7 @@ class LandingPage extends React.Component<IProps, IState> {
                     minimal={true}
                     intent="primary"
                     onClick={this.props.updatePage.bind(null, 'about')}
+                    icon='person'
                   >
                     <h2>About Me</h2>
                   </Button>
@@ -101,6 +102,7 @@ class LandingPage extends React.Component<IProps, IState> {
                     minimal={true}
                     intent="success"
                     onClick={this.props.updatePage.bind(null, 'volunteer')}
+                    icon='thumbs-up'
 
                   >
                     <h2>How I Can Help Out</h2>
@@ -119,6 +121,7 @@ class LandingPage extends React.Component<IProps, IState> {
                     minimal={true}
                     intent="danger"
                     onClick={this.props.updatePage.bind(null, 'projects')}
+                    icon='projects'
 
                   >
                     <h2>
