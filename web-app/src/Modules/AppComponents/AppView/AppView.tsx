@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import LandingPage from "../../LandingPage/LandingPage";
 import About from "../../About/About";
+import Contact from "../../Contact/Contact";
 
 interface IProps {}
 interface IState {
@@ -29,7 +30,7 @@ class AppView extends React.Component<IProps, IState> {
       browserWidth: window.innerWidth,
       lastUpdated: new Date(2019, 9 - 1, 12),
       //appKey: "landing"
-      appKey: 'landing'
+      appKey: 'contact'
     };
     this.updateBrowserDim = this.updateBrowserDim.bind(this);
     this.updatePage = this.updatePage.bind(this);
@@ -62,6 +63,9 @@ class AppView extends React.Component<IProps, IState> {
         );
       case "about":
         return <About height={this.state.browserHeight} />;
+
+      case 'contact':
+        return <Contact/>
 
       default:
         return <div>there's nothing here</div>;
