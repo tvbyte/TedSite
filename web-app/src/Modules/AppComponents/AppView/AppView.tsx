@@ -7,7 +7,8 @@ interface IProps {}
 interface IState {
   browserHeight: number;
   browserWidth: number;
-  lastUpdated:Date;
+  lastUpdated: Date;
+  appKey: string;
 }
 
 class AppView extends React.Component<IProps, IState> {
@@ -16,42 +17,59 @@ class AppView extends React.Component<IProps, IState> {
     this.state = {
       browserHeight: window.innerHeight,
       browserWidth: window.innerWidth,
-      lastUpdated: new Date(2019,9-1,12)
+      lastUpdated: new Date(2019, 9 - 1, 12),
+      appKey: "landing"
     };
     this.updateBrowserDim = this.updateBrowserDim.bind(this);
   }
 
   /* Life Cycle Functions*/
   componentDidMount() {
-    window.addEventListener('resize', this.updateBrowserDim);
+    window.addEventListener("resize", this.updateBrowserDim);
   }
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateBrowserDim);
+    window.removeEventListener("resize", this.updateBrowserDim);
   }
-  
+
   /* Helper Functions */
   updateBrowserDim() {
-    this.setState({ browserWidth: window.innerWidth, browserHeight: window.innerHeight });
+    this.setState({
+      browserWidth: window.innerWidth,
+      browserHeight: window.innerHeight
+    });
   }
 
+  private loadPage = (key: string) => {
+    switch (key) {
+      case "landing":
+        return <LandingPage />;
 
+      default:
+        return <div>there's nothing here</div>;
+    }
+  };
+
+  /* Callbacks */
+
+  private updatePage = (key:string)=>{
+    this.setState({appKey:key})
+  }
 
   render() {
     return (
       <div>
-        <Header />
+        <Header updatePage={this.updatePage.bind(this)} />
         <div
           style={{
-            height: this.state.browserHeight - 100,
+            height: this.state.browserHeight - 70,
             width: this.state.browserWidth,
-            background: "#30404D"
+            background: "#30404D",
+            overflow:'scroll'
           }}
         >
-          <LandingPage />
+          {this.loadPage(this.state.appKey)}
         </div>
-        <Footer 
-          lastUpdated={this.state.lastUpdated}
-        />
+        <Footer lastUpdated={this.state.lastUpdated} />
       </div>
     );
   }
