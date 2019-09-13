@@ -2,9 +2,7 @@ import * as React from "react";
 import {
   Button,
   Tooltip,
-  Tag,
   ButtonGroup,
-  AnchorButton
 } from "@blueprintjs/core";
 import "./Footer.css";
 interface IProps {

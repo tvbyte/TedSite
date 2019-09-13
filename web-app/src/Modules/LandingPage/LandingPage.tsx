@@ -1,7 +1,10 @@
 import React from "react";
-import { Button } from "@blueprintjs/core";
+import { Button, Tag } from "@blueprintjs/core";
 
-interface IProps {}
+interface IProps {
+  viewHeight: number;
+  updatePage(appKey: string): void;
+}
 interface IState {}
 
 class LandingPage extends React.Component<IProps, IState> {
@@ -10,9 +13,21 @@ class LandingPage extends React.Component<IProps, IState> {
     this.state = {};
   }
   render() {
+    const height: number = this.props.viewHeight / 3;
     return (
-      <div style={{ textAlign: "center" }}>
-        <div style={{ textAlign: "left", padding: 10 }}>
+      <div style={{ margin: 5 }}>
+        <div
+          style={{
+            textAlign: "left",
+            paddingLeft: 10,
+            overflow: "scroll",
+            border: "2px solid #5C7080",
+            borderRadius: "10px",
+            marginBottom: 10,
+            marginTop: 10,
+            background: "#293742"
+          }}
+        >
           <h1>Welcome to this site</h1>
           <div>
             In the age of <b>The Profile</b> it may seem silly to have a
@@ -22,43 +37,89 @@ class LandingPage extends React.Component<IProps, IState> {
           <div>
             I decided to make this website for several reasons:
             <ul>
-              <li>to make it easy for organizations to understand what I can offer</li>
-              <li>to act as a C.V.</li>
+              <li>
+                to make it easy for organizations to understand what I can offer
+              </li>
+              <li>to be a living document of my academic and work careers</li>
               <li>to act as a hub between projects</li>
               <li>to showcase some of my programming and design skills</li>
-              <li>to be a living document of my academic and work careers</li>
             </ul>
-          
           </div>
         </div>
-        <table style={{ width: "100%" }}>
-          <tbody>
-            <tr>
-              <td>
-                <Button fill={true} style={{ height: 100 }}>
-                  More About Me
-                </Button>
-              </td>
-              <td>
-                <Button fill={true} style={{ height: 100 }}>
-                  Technical Items
-                </Button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <Button fill={true} style={{ height: 100 }}>
-                  How I Can Help Out
-                </Button>
-              </td>
-              <td>
-                <Button fill={true} style={{ height: 100 }}>
-                  Personal Projects
-                </Button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div style={{ textAlign: "center"}}>
+          <table style={{ width: "100%" }}>
+            <tbody>
+              <tr>
+                <td
+                  style={{
+                    border: "1px solid #2B95D6",
+                    borderRadius: "10px",
+                    background:'#202B33'
+                  }}
+                >
+                  <Button
+                    fill={true}
+                    style={{ height: height }}
+                    minimal={true}
+                    intent="primary"
+                  >
+                    More About Me
+                  </Button>
+                </td>
+                <td
+                  style={{
+                    border: "1px solid #F29D49",
+                    borderRadius: "10px",
+                    background:'#202B33'
+                  }}
+                >
+                  <Button
+                    fill={true}
+                    style={{ height: height }}
+                    minimal={true}
+                    intent="warning"
+                  >
+                    Technical Items
+                  </Button>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    border: "1px solid #15B371",
+                    borderRadius: "10px",
+                    background:'#202B33'
+                  }}
+                >
+                  <Button
+                    fill={true}
+                    style={{ height: height }}
+                    minimal={true}
+                    intent="success"
+                  >
+                    How I Can Help Out
+                  </Button>
+                </td>
+                <td
+                  style={{
+                    border: "1px solid #F55656",
+                    borderRadius: "10px",
+                    background:'#202B33'
+                  }}
+                >
+                  <Button
+                    fill={true}
+                    style={{ height: height }}
+                    minimal={true}
+                    intent="danger"
+                  >
+                    Personal Projects
+                  </Button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }

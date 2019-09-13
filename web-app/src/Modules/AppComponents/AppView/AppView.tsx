@@ -21,6 +21,7 @@ class AppView extends React.Component<IProps, IState> {
       appKey: "landing"
     };
     this.updateBrowserDim = this.updateBrowserDim.bind(this);
+    this.updatePage=this.updatePage.bind(this);
   }
 
   /* Life Cycle Functions*/
@@ -42,7 +43,7 @@ class AppView extends React.Component<IProps, IState> {
   private loadPage = (key: string) => {
     switch (key) {
       case "landing":
-        return <LandingPage />;
+        return <LandingPage viewHeight={this.state.browserHeight-70} updatePage={this.updatePage} />;
 
       default:
         return <div>there's nothing here</div>;
@@ -58,10 +59,10 @@ class AppView extends React.Component<IProps, IState> {
   render() {
     return (
       <div>
-        <Header updatePage={this.updatePage.bind(this)} />
+        <Header updatePage={this.updatePage} />
         <div
           style={{
-            height: this.state.browserHeight - 70,
+            height: this.state.browserHeight - 60,
             width: this.state.browserWidth,
             background: "#30404D",
             overflow:'scroll'
