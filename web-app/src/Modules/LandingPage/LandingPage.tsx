@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Tag } from "@blueprintjs/core";
+import { Button, Tag, Icon } from "@blueprintjs/core";
 
 interface IProps {
   viewHeight: number;
@@ -59,18 +59,36 @@ class LandingPage extends React.Component<IProps, IState> {
                 >
                   <Button
                     fill={true}
-                    style={{ height: height }}
                     minimal={true}
+                    icon="person"
                     intent="primary"
-                    onClick={this.props.updatePage.bind(null, 'about')}
-                    icon='person'
+                    onClick={this.props.updatePage.bind(null, "about")}
                   >
                     <h2>About Me</h2>
                   </Button>
+                  <Button
+                    fill={true}
+                    minimal={true}
+                    icon="list"
+                    intent="primary"
+                    onClick={this.props.updatePage.bind(null, "resume")}
+                  >
+                    Resume
+                  </Button>
+                  <Button
+                    fill={true}
+                    minimal={true}
+                    icon="chat"
+                    intent="primary"
+                    onClick={this.props.updatePage.bind(null, "contact")}
+                  >
+                    Contact
+                  </Button>
                 </td>
+
                 <td
                   style={{
-                    border: "1px solid #F29D49",
+                    border: "1px solid #F55656",
                     borderRadius: "10px",
                     background: "#293742"
                   }}
@@ -79,12 +97,11 @@ class LandingPage extends React.Component<IProps, IState> {
                     fill={true}
                     style={{ height: height }}
                     minimal={true}
-                    intent="warning"
+                    intent="danger"
+                    onClick={this.props.updatePage.bind(null, "projects")}
+                    icon="projects"
                   >
-                    <h2>
-                    Technical Items
-                    </h2>
-                    
+                    <h2>Personal Projects</h2>
                   </Button>
                 </td>
               </tr>
@@ -101,33 +118,46 @@ class LandingPage extends React.Component<IProps, IState> {
                     style={{ height: height }}
                     minimal={true}
                     intent="success"
-                    onClick={this.props.updatePage.bind(null, 'volunteer')}
-                    icon='thumbs-up'
-
+                    onClick={this.props.updatePage.bind(null, "volunteer")}
+                    icon="thumbs-up"
                   >
                     <h2>How I Can Help Out</h2>
                   </Button>
                 </td>
                 <td
                   style={{
-                    border: "1px solid #F55656",
+                    border: "1px solid #F29D49",
                     borderRadius: "10px",
                     background: "#293742"
                   }}
                 >
                   <Button
                     fill={true}
-                    style={{ height: height }}
                     minimal={true}
-                    intent="danger"
-                    onClick={this.props.updatePage.bind(null, 'projects')}
-                    icon='projects'
-
+                    icon="code-block"
+                    intent="warning"
+                    onClick={this.props.updatePage.bind(null, "languages")}
                   >
-                    <h2>
-                    Personal Projects
-                    </h2>
-                   
+                    Programming Languages
+                  </Button>
+
+                  <Button
+                    fill={true}
+                    minimal={true}
+                    icon="predictive-analysis"
+                    intent="warning"
+                    onClick={this.props.updatePage.bind(null, "courses")}
+                  >
+                    Academic Courses
+                  </Button>
+                  <Button
+                    fill={true}
+                    minimal={true}
+                    icon="function"
+                    intent="warning"
+                    onClick={this.props.updatePage.bind(null, "research")}
+                  >
+                    Research
                   </Button>
                 </td>
               </tr>
