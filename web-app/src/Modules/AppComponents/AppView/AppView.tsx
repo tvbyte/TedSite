@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import LandingPage from "../../LandingPage/LandingPage";
+import About from "../../About/About";
 
 interface IProps {}
 interface IState {
@@ -27,10 +28,11 @@ class AppView extends React.Component<IProps, IState> {
       browserHeight: window.innerHeight,
       browserWidth: window.innerWidth,
       lastUpdated: new Date(2019, 9 - 1, 12),
-      appKey: "landing"
+      //appKey: "landing"
+      appKey: 'landing'
     };
     this.updateBrowserDim = this.updateBrowserDim.bind(this);
-    this.updatePage=this.updatePage.bind(this);
+    this.updatePage = this.updatePage.bind(this);
   }
 
   /* Life Cycle Functions*/
@@ -52,9 +54,15 @@ class AppView extends React.Component<IProps, IState> {
   private loadPage = (key: string) => {
     switch (key) {
       case "landing":
-        return <LandingPage viewHeight={this.state.browserHeight-70} updatePage={this.updatePage} />;
+        return (
+          <LandingPage
+            viewHeight={this.state.browserHeight - 70}
+            updatePage={this.updatePage}
+          />
+        );
+      case "about":
+        return <About height={this.state.browserHeight} />;
 
-    
       default:
         return <div>there's nothing here</div>;
     }
@@ -62,9 +70,9 @@ class AppView extends React.Component<IProps, IState> {
 
   /* Callbacks */
 
-  private updatePage = (key:string)=>{
-    this.setState({appKey:key})
-  }
+  private updatePage = (key: string) => {
+    this.setState({ appKey: key });
+  };
 
   render() {
     return (
@@ -74,8 +82,8 @@ class AppView extends React.Component<IProps, IState> {
           style={{
             height: this.state.browserHeight - 60,
             width: this.state.browserWidth,
-            background: "#30404D",
-            overflow:'scroll'
+            background: "#202B33",
+            overflow: "scroll"
           }}
         >
           {this.loadPage(this.state.appKey)}

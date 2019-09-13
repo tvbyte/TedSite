@@ -54,7 +54,7 @@ class LandingPage extends React.Component<IProps, IState> {
                   style={{
                     border: "1px solid #2B95D6",
                     borderRadius: "10px",
-                    background: "#202B33"
+                    background: "#293742"
                   }}
                 >
                   <Button
@@ -71,7 +71,7 @@ class LandingPage extends React.Component<IProps, IState> {
                   style={{
                     border: "1px solid #F29D49",
                     borderRadius: "10px",
-                    background: "#202B33"
+                    background: "#293742"
                   }}
                 >
                   <Button
@@ -92,7 +92,7 @@ class LandingPage extends React.Component<IProps, IState> {
                   style={{
                     border: "1px solid #15B371",
                     borderRadius: "10px",
-                    background: "#202B33"
+                    background: "#293742"
                   }}
                 >
                   <Button
@@ -110,7 +110,7 @@ class LandingPage extends React.Component<IProps, IState> {
                   style={{
                     border: "1px solid #F55656",
                     borderRadius: "10px",
-                    background: "#202B33"
+                    background: "#293742"
                   }}
                 >
                   <Button
