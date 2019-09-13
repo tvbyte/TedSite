@@ -4,6 +4,12 @@ import Footer from "../Footer/Footer";
 import LandingPage from "../../LandingPage/LandingPage";
 import About from "../../About/About";
 import Contact from "../../Contact/Contact";
+import ProjectsNav from "../../Projects/ProjectsNav";
+import Volunteer from "../../Volunteer/Volunteer";
+import Languages from "../../Languages/Languages";
+import Courses from "../../Courses/Courses";
+import Research from "../../Research/Research";
+import Resume from "../../Resume/Resume";
 
 interface IProps {}
 interface IState {
@@ -30,7 +36,7 @@ class AppView extends React.Component<IProps, IState> {
       browserWidth: window.innerWidth,
       lastUpdated: new Date(2019, 9 - 1, 12),
       //appKey: "landing"
-      appKey: 'contact'
+      appKey: "landing"
     };
     this.updateBrowserDim = this.updateBrowserDim.bind(this);
     this.updatePage = this.updatePage.bind(this);
@@ -64,8 +70,20 @@ class AppView extends React.Component<IProps, IState> {
       case "about":
         return <About height={this.state.browserHeight} />;
 
-      case 'contact':
-        return <Contact/>
+      case "contact":
+        return <Contact />;
+      case "projects":
+        return <ProjectsNav />;
+      case "volunteer":
+        return <Volunteer />;
+      case "languages":
+        return <Languages />;
+      case "courses":
+        return <Courses />;
+      case "research":
+        return <Research />;
+      case "resume":
+        return <Resume />;
 
       default:
         return <div>there's nothing here</div>;

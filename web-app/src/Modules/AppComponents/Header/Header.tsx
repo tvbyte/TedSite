@@ -11,7 +11,7 @@ interface IProps {
 }
 const Header: React.SFC<IProps> = props => {
   return (
-    <div className='header'> 
+    <div className="header">
       <Button
         icon="home"
         minimal={true}
@@ -25,12 +25,32 @@ const Header: React.SFC<IProps> = props => {
           <Popover
             content={
               <Menu>
-                <Menu.Item icon="projects" text="Projects" />
-                <Menu.Item icon="code-block" text="Programming Languages" />
-                <Menu.Item icon="function" text="Research" />
-                <Menu.Item icon="predictive-analysis" text="Academic Courses" />
+                <Menu.Item
+                  icon="projects"
+                  text="Projects"
+                  onClick={props.updatePage.bind(null, "projects")}
+                />
+                <Menu.Item
+                  icon="code-block"
+                  text="Programming Languages"
+                  onClick={props.updatePage.bind(null, "languages")}
+                />
+                <Menu.Item
+                  icon="function"
+                  text="Research"
+                  onClick={props.updatePage.bind(null, "research")}
+                />
+                <Menu.Item
+                  icon="predictive-analysis"
+                  text="Academic Courses"
+                  onClick={props.updatePage.bind(null, "courses")}
+                />
                 <Menu.Divider />
-                <Menu.Item icon="properties" text="Resume" />
+                <Menu.Item
+                  icon="properties"
+                  text="Resume"
+                  onClick={props.updatePage.bind(null, "resume")}
+                />
               </Menu>
             }
             position={Position.BOTTOM}
