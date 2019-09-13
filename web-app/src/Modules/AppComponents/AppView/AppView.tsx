@@ -9,6 +9,15 @@ interface IState {
   browserWidth: number;
   lastUpdated: Date;
   appKey: string;
+  /**
+   * keys
+   * > landing
+   * > about
+   * > volunteer
+   * > projects
+   * > contact
+   * @TODO routing
+   */
 }
 
 class AppView extends React.Component<IProps, IState> {
@@ -45,6 +54,7 @@ class AppView extends React.Component<IProps, IState> {
       case "landing":
         return <LandingPage viewHeight={this.state.browserHeight-70} updatePage={this.updatePage} />;
 
+    
       default:
         return <div>there's nothing here</div>;
     }

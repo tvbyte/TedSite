@@ -46,7 +46,7 @@ class LandingPage extends React.Component<IProps, IState> {
             </ul>
           </div>
         </div>
-        <div style={{ textAlign: "center"}}>
+        <div style={{ textAlign: "center" }}>
           <table style={{ width: "100%" }}>
             <tbody>
               <tr>
@@ -54,7 +54,7 @@ class LandingPage extends React.Component<IProps, IState> {
                   style={{
                     border: "1px solid #2B95D6",
                     borderRadius: "10px",
-                    background:'#202B33'
+                    background: "#202B33"
                   }}
                 >
                   <Button
@@ -62,15 +62,16 @@ class LandingPage extends React.Component<IProps, IState> {
                     style={{ height: height }}
                     minimal={true}
                     intent="primary"
+                    onClick={this.props.updatePage.bind(null, 'about')}
                   >
-                    More About Me
+                    <h2>About Me</h2>
                   </Button>
                 </td>
                 <td
                   style={{
                     border: "1px solid #F29D49",
                     borderRadius: "10px",
-                    background:'#202B33'
+                    background: "#202B33"
                   }}
                 >
                   <Button
@@ -79,7 +80,10 @@ class LandingPage extends React.Component<IProps, IState> {
                     minimal={true}
                     intent="warning"
                   >
+                    <h2>
                     Technical Items
+                    </h2>
+                    
                   </Button>
                 </td>
               </tr>
@@ -88,7 +92,7 @@ class LandingPage extends React.Component<IProps, IState> {
                   style={{
                     border: "1px solid #15B371",
                     borderRadius: "10px",
-                    background:'#202B33'
+                    background: "#202B33"
                   }}
                 >
                   <Button
@@ -96,15 +100,17 @@ class LandingPage extends React.Component<IProps, IState> {
                     style={{ height: height }}
                     minimal={true}
                     intent="success"
+                    onClick={this.props.updatePage.bind(null, 'volunteer')}
+
                   >
-                    How I Can Help Out
+                    <h2>How I Can Help Out</h2>
                   </Button>
                 </td>
                 <td
                   style={{
                     border: "1px solid #F55656",
                     borderRadius: "10px",
-                    background:'#202B33'
+                    background: "#202B33"
                   }}
                 >
                   <Button
@@ -112,8 +118,13 @@ class LandingPage extends React.Component<IProps, IState> {
                     style={{ height: height }}
                     minimal={true}
                     intent="danger"
+                    onClick={this.props.updatePage.bind(null, 'projects')}
+
                   >
+                    <h2>
                     Personal Projects
+                    </h2>
+                   
                   </Button>
                 </td>
               </tr>

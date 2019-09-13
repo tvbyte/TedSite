@@ -24,15 +24,15 @@ const Footer: React.SFC<IProps> = props => {
   return (
     <div className="footer">
       <ButtonGroup minimal={true}>
-        <i style={{ paddingTop: 5 }}>copyright Theodore McCulloch 2019</i>
+       
+        <i style={{ paddingTop: 5 }}>© copyright Theodore McCulloch 2019</i>
         <Tooltip content={generateTimeString()}intent="warning">
-          <Button icon="updated" intent="warning" minimal={true} />
+          <Button icon="updated" intent="warning" />
         </Tooltip>
         <Tooltip content="link to site's source code" intent="success">
           <Button
             icon="code"
             intent="success"
-            minimal={true}
             onClick={onCodeClick}
           />
         </Tooltip>

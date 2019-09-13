@@ -41,7 +41,7 @@ const Header: React.SFC<IProps> = props => {
 
           <Button
             icon="thumbs-up"
-            onClick={props.updatePage.bind(null, "altru")}
+            onClick={props.updatePage.bind(null, "volunteer")}
           >
             Volunteering
           </Button>
