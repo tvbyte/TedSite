@@ -8,8 +8,9 @@ const About: React.SFC<IProps> = props => {
       <div
         style={{
           position: "fixed",
-          right: 0,
-          width: "60%",
+          margin:10,
+          right:0,
+          width: "58%",
           textAlign: "center",
           background: "rgba(72, 175, 240, .5)"
         }}
@@ -46,8 +47,11 @@ const About: React.SFC<IProps> = props => {
           </ul>
         </div>
       </div>
-      <div>
-        <img width="40%" src={require("../../Media/ted_mcculloch.jpg")} />
+      <div style={{ width: "40%" }}>
+        <img
+          height={props.height - 50}
+          src={require("../../Media/ted_mcculloch.jpg")}
+        />
       </div>
     </div>
   );

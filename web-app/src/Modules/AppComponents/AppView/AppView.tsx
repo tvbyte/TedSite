@@ -36,7 +36,7 @@ class AppView extends React.Component<IProps, IState> {
       browserWidth: window.innerWidth,
       lastUpdated: new Date(2019, 9 - 1, 12),
       //appKey: "landing"
-      appKey: "landing"
+      appKey: "about"
     };
     this.updateBrowserDim = this.updateBrowserDim.bind(this);
     this.updatePage = this.updatePage.bind(this);

@@ -13,7 +13,7 @@ class LandingPage extends React.Component<IProps, IState> {
     this.state = {};
   }
   render() {
-    const height: number = this.props.viewHeight / 3;
+    const height: number = this.props.viewHeight / 3 - 15;
     return (
       <div style={{ margin: 5 }}>
         <div
@@ -25,10 +25,11 @@ class LandingPage extends React.Component<IProps, IState> {
             borderRadius: "10px",
             marginBottom: 10,
             marginTop: 10,
-            background: "#293742"
+            background: "#293742",
+            color: "#E1E8ED"
           }}
         >
-          <h1>Welcome to this site</h1>
+          <h1>Ted McCulloch's Websiste</h1>
           <div>
             In the age of <b>The Profile</b> it may seem silly to have a
             personal website, and that might very well be true. However here we
@@ -37,14 +38,23 @@ class LandingPage extends React.Component<IProps, IState> {
           <div>
             I decided to make this website for several reasons:
             <ul>
-              <li>
+              <li style={{ color: "#48AFF0" }}>
+                to make it easy to find and contact me
+              </li>
+              <li style={{ color: "#FF7373" }}>
+                to act as a hub between projects
+              </li>
+
+              <li style={{ color: "#3DCC91" }}>
                 to make it easy for organizations to understand what I can offer
               </li>
-              <li>to be a living document of my academic and work careers</li>
-              <li>to act as a hub between projects</li>
-              <li>to showcase some of my programming and design skills</li>
+              <li style={{ color: "#FFB366" }}>
+                to be a living document of my academic and work careers
+              </li>
             </ul>
           </div>
+          <div>Please feel free to reach out!</div>
+          <br />
         </div>
         <div style={{ textAlign: "center" }}>
           <table style={{ width: "100%" }}>
