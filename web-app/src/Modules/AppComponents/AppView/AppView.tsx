@@ -17,7 +17,6 @@ interface IProps {}
 interface IState {
   browserHeight: number;
   browserWidth: number;
-  lastUpdated: Date;
 }
 
 class AppView extends React.Component<IProps, IState> {
@@ -26,11 +25,11 @@ class AppView extends React.Component<IProps, IState> {
     this.state = {
       browserHeight: window.innerHeight,
       browserWidth: window.innerWidth,
-      lastUpdated: new Date(2019, 9 - 1, 12),
     };
     this.updateBrowserDim = this.updateBrowserDim.bind(this);
     this.landing = this.landing.bind(this);
     this.about = this.about.bind(this);
+    this.resume = this.resume.bind(this);
   }
 
   /* Life Cycle Functions*/
@@ -50,23 +49,22 @@ class AppView extends React.Component<IProps, IState> {
   }
 
   landing() {
-    return (
-      <LandingPage
-        viewHeight={this.state.browserHeight - 70}
-      />
-    );
+    return <LandingPage viewHeight={this.state.browserHeight - 70} />;
   }
 
   about() {
     return <About height={this.state.browserHeight} />;
   }
 
+  resume() {
+    return <Resume viewHeight={this.state.browserHeight - 70} />;
+  }
 
   render() {
     return (
       <Router>
         <div>
-          <Header/>
+          <Header />
           <div
             style={{
               height: this.state.browserHeight - 60,
@@ -82,10 +80,10 @@ class AppView extends React.Component<IProps, IState> {
             <Route path="/languages/" component={Languages} />
             <Route path="/courses/" component={Courses} />
             <Route path="/research/" component={Research} />
-            <Route path="/resume/" component={Resume} />
+            <Route path="/resume/" component={this.resume} />
           </div>
 
-          <Footer lastUpdated={this.state.lastUpdated} />
+          <Footer />
         </div>
       </Router>
     );

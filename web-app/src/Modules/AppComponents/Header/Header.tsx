@@ -14,7 +14,7 @@ const Header: React.SFC<IProps> = props => {
   return (
     <div className="header">
       <Link to="/" style={linkStyle}>
-        <Button icon="grid-view" minimal={true} intent='warning'/>
+        <Button icon="home" minimal={true} intent='primary'/>
       </Link>
 
       <div style={{ float: "right" }}>
