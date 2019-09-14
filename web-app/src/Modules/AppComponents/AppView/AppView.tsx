@@ -18,7 +18,6 @@ interface IState {
   browserHeight: number;
   browserWidth: number;
   lastUpdated: Date;
-  appKey: string;
 }
 
 class AppView extends React.Component<IProps, IState> {
@@ -28,11 +27,8 @@ class AppView extends React.Component<IProps, IState> {
       browserHeight: window.innerHeight,
       browserWidth: window.innerWidth,
       lastUpdated: new Date(2019, 9 - 1, 12),
-      //appKey: "landing"
-      appKey: "landing"
     };
     this.updateBrowserDim = this.updateBrowserDim.bind(this);
-    this.updatePage = this.updatePage.bind(this);
     this.landing = this.landing.bind(this);
     this.about = this.about.bind(this);
   }
@@ -57,7 +53,6 @@ class AppView extends React.Component<IProps, IState> {
     return (
       <LandingPage
         viewHeight={this.state.browserHeight - 70}
-        updatePage={this.updatePage}
       />
     );
   }
@@ -66,11 +61,6 @@ class AppView extends React.Component<IProps, IState> {
     return <About height={this.state.browserHeight} />;
   }
 
-  /* Callbacks */
-
-  private updatePage = (key: string) => {
-    this.setState({ appKey: key });
-  };
 
   render() {
     return (

@@ -1,10 +1,10 @@
 import React from "react";
 import { Button } from "@blueprintjs/core";
 import "./LandingPage.css";
+import { Link } from "react-router-dom";
 
 interface IProps {
   viewHeight: number;
-  updatePage(appKey: string): void;
 }
 interface IState {}
 
@@ -15,6 +15,7 @@ class LandingPage extends React.Component<IProps, IState> {
   }
   render() {
     const height: number = this.props.viewHeight / 3 - 15;
+    const linkStyle: object = { textDecoration: "none" };
     return (
       <div style={{ margin: 5 }}>
         <div className="lp-display">
@@ -50,90 +51,98 @@ class LandingPage extends React.Component<IProps, IState> {
             <tbody>
               <tr>
                 <td className="blue-border">
-                  <Button
-                    fill={true}
-                    minimal={true}
-                    icon="person"
-                    intent="primary"
-                    onClick={this.props.updatePage.bind(null, "about")}
-                  >
-                    <h2>About Me</h2>
-                  </Button>
-                  <Button
-                    fill={true}
-                    minimal={true}
-                    icon="list"
-                    intent="primary"
-                    onClick={this.props.updatePage.bind(null, "resume")}
-                  >
-                    Resume
-                  </Button>
-                  <Button
-                    fill={true}
-                    minimal={true}
-                    icon="chat"
-                    intent="primary"
-                    onClick={this.props.updatePage.bind(null, "contact")}
-                  >
-                    Contact
-                  </Button>
+                  <Link to="/about" style={linkStyle}>
+                    <Button
+                      fill={true}
+                      minimal={true}
+                      icon="person"
+                      intent="primary"
+                    >
+                      <h2>About Me</h2>
+                    </Button>
+                  </Link>
+
+                  <Link to="/resume" style={linkStyle}>
+                    <Button
+                      fill={true}
+                      minimal={true}
+                      icon="list"
+                      intent="primary"
+                    >
+                      Resume
+                    </Button>
+                  </Link>
+                  <Link to="/contact" style={linkStyle}>
+                    <Button
+                      fill={true}
+                      minimal={true}
+                      icon="chat"
+                      intent="primary"
+                    >
+                      Contact
+                    </Button>
+                  </Link>
                 </td>
 
                 <td className="red-border">
-                  <Button
-                    fill={true}
-                    style={{ height: height }}
-                    minimal={true}
-                    intent="danger"
-                    onClick={this.props.updatePage.bind(null, "projects")}
-                    icon="projects"
-                  >
-                    <h2>Personal Projects</h2>
-                  </Button>
+                  <Link to="/projects" style={linkStyle}>
+                    <Button
+                      fill={true}
+                      style={{ height: height }}
+                      minimal={true}
+                      intent="danger"
+                      icon="projects"
+                    >
+                      <h2>Personal Projects</h2>
+                    </Button>
+                  </Link>
                 </td>
               </tr>
               <tr>
                 <td className="green-border">
-                  <Button
-                    fill={true}
-                    style={{ height: height }}
-                    minimal={true}
-                    intent="success"
-                    onClick={this.props.updatePage.bind(null, "volunteer")}
-                    icon="thumbs-up"
-                  >
-                    <h2>How I Can Help Out</h2>
-                  </Button>
+                  <Link to="/volunteer" style={linkStyle}>
+                    <Button
+                      fill={true}
+                      style={{ height: height }}
+                      minimal={true}
+                      intent="success"
+                      icon="thumbs-up"
+                    >
+                      <h2>How I Can Help Out</h2>
+                    </Button>
+                  </Link>
                 </td>
                 <td className="yellow-border">
-                  <Button
-                    fill={true}
-                    minimal={true}
-                    icon="code-block"
-                    intent="warning"
-                    onClick={this.props.updatePage.bind(null, "languages")}
-                  >
-                    Programming Languages
-                  </Button>
-
-                  <Button
-                    fill={true}
-                    minimal={true}
-                    icon="predictive-analysis"
-                    intent="warning"
-                    onClick={this.props.updatePage.bind(null, "courses")}
-                  >
-                    Academic Courses
-                  </Button>
-                  <Button
-                    fill={true}
-                    minimal={true}
-                    icon="function"
-                    intent="warning"
-                    onClick={this.props.updatePage.bind(null, "research")}
-                  >
-                    Research
-                  </Button>
+                  <Link to="/languages" style={linkStyle}>
+                    <Button
+                      fill={true}
+                      minimal={true}
+                      icon="code-block"
+                      intent="warning"
+                    >
+                      Programming Languages
+                    </Button>
+                  </Link>
+                  <Link to="/courses" style={linkStyle}>
+                    <Button
+                      fill={true}
+                      minimal={true}
+                      icon="predictive-analysis"
+                      intent="warning"
+                    >
+                      Academic Courses
+                    </Button>
+                  </Link>
+                  <Link to="/research" style={linkStyle}>
+                    <Button
+                      fill={true}
+                      minimal={true}
+                      icon="function"
+                      intent="warning"
+                    >
+                      Research
+                    </Button>
+                  </Link>
                 </td>
               </tr>
             </tbody>
