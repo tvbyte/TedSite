@@ -11,7 +11,7 @@ import Courses from "../../Courses/Courses";
 import Research from "../../Research/Research";
 import Resume from "../../Resume/Resume";
 import "./AppView.css";
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 interface IProps {}
 interface IState {
@@ -42,6 +42,8 @@ class AppView extends React.Component<IProps, IState> {
     };
     this.updateBrowserDim = this.updateBrowserDim.bind(this);
     this.updatePage = this.updatePage.bind(this);
+    this.landing = this.landing.bind(this);
+    this.about = this.about.bind(this);
   }
 
   /* Life Cycle Functions*/
@@ -60,37 +62,18 @@ class AppView extends React.Component<IProps, IState> {
     });
   }
 
-  private loadPage = (key: string) => {
-    switch (key) {
-      case "landing":
-        return (
-          <LandingPage
-            viewHeight={this.state.browserHeight - 70}
-            updatePage={this.updatePage}
-          />
-        );
-      case "about":
-        return <About height={this.state.browserHeight} />;
+  landing() {
+    return (
+      <LandingPage
+        viewHeight={this.state.browserHeight - 70}
+        updatePage={this.updatePage}
+      />
+    );
+  }
 
-      case "contact":
-        return <Contact />;
-      case "projects":
-        return <ProjectsNav />;
-      case "volunteer":
-        return <Volunteer />;
-      case "languages":
-        return <Languages />;
-      case "courses":
-        return <Courses />;
-      case "research":
-        return <Research />;
-      case "resume":
-        return <Resume />;
-
-      default:
-        return <div>there's nothing here</div>;
-    }
-  };
+  about() {
+    return <About height={this.state.browserHeight} />;
+  }
 
   /* Callbacks */
 
@@ -100,19 +83,30 @@ class AppView extends React.Component<IProps, IState> {
 
   render() {
     return (
-      <div>
-        <Header updatePage={this.updatePage} />
-        <div
-          style={{
-            height: this.state.browserHeight - 60,
-            width: this.state.browserWidth
-          }}
-          className="app-view"
-        >
-          {this.loadPage(this.state.appKey)}
+      <Router>
+        <div>
+          <Header updatePage={this.updatePage} />
+          <div
+            style={{
+              height: this.state.browserHeight - 60,
+              width: this.state.browserWidth
+            }}
+            className="app-view"
+          >
+            <Route path="/" exact component={this.landing} />
+            <Route path="/about/" component={this.about} />
+            <Route path="/contact/" component={Contact} />
+            <Route path="/projects/" component={ProjectsNav} />
+            <Route path="/volunteer/" component={Volunteer} />
+            <Route path="/languages/" component={Languages} />
+            <Route path="/courses/" component={Courses} />
+            <Route path="/research/" component={Research} />
+            <Route path="/resume/" component={Resume} />
+          </div>
+
+          <Footer lastUpdated={this.state.lastUpdated} />
         </div>
-        <Footer lastUpdated={this.state.lastUpdated} />
-      </div>
+      </Router>
     );
   }
 }
