@@ -19,15 +19,6 @@ interface IState {
   browserWidth: number;
   lastUpdated: Date;
   appKey: string;
-  /**
-   * keys
-   * > landing
-   * > about
-   * > volunteer
-   * > projects
-   * > contact
-   * @TODO routing
-   */
 }
 
 class AppView extends React.Component<IProps, IState> {
@@ -85,7 +76,7 @@ class AppView extends React.Component<IProps, IState> {
     return (
       <Router>
         <div>
-          <Header updatePage={this.updatePage} />
+          <Header/>
           <div
             style={{
               height: this.state.browserHeight - 60,

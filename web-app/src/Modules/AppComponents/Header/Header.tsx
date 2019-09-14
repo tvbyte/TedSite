@@ -6,51 +6,48 @@ import {
   Menu,
   Position
 } from "@blueprintjs/core";
-interface IProps {
-  updatePage(appKey: string): void;
-}
+import { Link } from "react-router-dom";
+import "./Header.css";
+interface IProps {}
 const Header: React.SFC<IProps> = props => {
+  const linkStyle: object = { textDecoration: "none", color: "#EBF1F5" };
   return (
     <div className="header">
-      <Button
-        icon="home"
-        minimal={true}
-        onClick={props.updatePage.bind(null, "landing")}
-      />
+      <Link to="/" style={linkStyle}>
+        <Button icon="home" minimal={true} />
+      </Link>
+
       <div style={{ float: "right" }}>
         <ButtonGroup minimal={true}>
-          <Button icon="person" onClick={props.updatePage.bind(null, "about")}>
-            About
-          </Button>
+          <Link to="/about" style={linkStyle}>
+            <Button icon="person">About</Button>
+          </Link>
+
           <Popover
             content={
               <Menu>
-                <Menu.Item
-                  icon="projects"
-                  text="Projects"
-                  onClick={props.updatePage.bind(null, "projects")}
-                />
-                <Menu.Item
-                  icon="code-block"
-                  text="Programming Languages"
-                  onClick={props.updatePage.bind(null, "languages")}
-                />
-                <Menu.Item
-                  icon="function"
-                  text="Research"
-                  onClick={props.updatePage.bind(null, "research")}
-                />
-                <Menu.Item
-                  icon="predictive-analysis"
-                  text="Academic Courses"
-                  onClick={props.updatePage.bind(null, "courses")}
-                />
+                <Link to="/projects" style={linkStyle}>
+                  <Menu.Item icon="projects" text="Projects" />
+                </Link>
+
+                <Link to="/languages" style={linkStyle}>
+                  <Menu.Item icon="code-block" text="Programming Languages" />
+                </Link>
+
+                <Link to="/research" style={linkStyle}>
+                  <Menu.Item icon="function" text="Research" />
+                </Link>
+                <Link to="/courses" style={linkStyle}>
+                  <Menu.Item
+                    icon="predictive-analysis"
+                    text="Academic Courses"
+                  />
+                </Link>
+
                 <Menu.Divider />
-                <Menu.Item
-                  icon="properties"
-                  text="Resume"
-                  onClick={props.updatePage.bind(null, "resume")}
-                />
+                <Link to="/resume" style={linkStyle}>
+                  <Menu.Item icon="properties" text="Resume" />
+                </Link>
               </Menu>
             }
             position={Position.BOTTOM}
@@ -59,16 +56,13 @@ const Header: React.SFC<IProps> = props => {
               C.V.
             </Button>
           </Popover>
+          <Link to="/volunteer" style={linkStyle}>
+            <Button icon="thumbs-up">Volunteering</Button>
+          </Link>
 
-          <Button
-            icon="thumbs-up"
-            onClick={props.updatePage.bind(null, "volunteer")}
-          >
-            Volunteering
-          </Button>
-          <Button icon="chat" onClick={props.updatePage.bind(null, "contact")}>
-            Contact
-          </Button>
+          <Link to="/contact" style={linkStyle}>
+            <Button icon="chat">Contact</Button>
+          </Link>
         </ButtonGroup>
       </div>
     </div>
