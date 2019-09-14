@@ -1,22 +1,15 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Tag, Tooltip } from "@blueprintjs/core";
-
+import './Contact.css';
 interface IProps {}
 const Contact: React.SFC<IProps> = props => {
   const [copied, setCopied] = useState(false);
 
   return (
-    <div style={{ margin: 10, textAlign: "center" }}>
+    <div className='contact-display'>
       <h1>Contact</h1>
       <div
-        style={{
-          marginLeft: "10%",
-          marginRight: "10%",
-          background: "#394B59",
-          padding: 20,
-          borderRadius: "10px",
-
-        }}
+        className='contact-text'
       >
         Email Me At:
         <br />

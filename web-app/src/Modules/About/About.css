@@ -1,0 +1,12 @@
+.about-image {
+    width: 40%;
+}
+
+.about-text{
+    position: fixed;
+    margin:10px;
+    right:0px;
+    width:58%;
+    text-align: center;
+    background: rgba(72, 175, 240, .5);
+}

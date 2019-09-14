@@ -10,6 +10,8 @@ import Languages from "../../Languages/Languages";
 import Courses from "../../Courses/Courses";
 import Research from "../../Research/Research";
 import Resume from "../../Resume/Resume";
+import "./AppView.css";
+
 
 interface IProps {}
 interface IState {
@@ -36,7 +38,7 @@ class AppView extends React.Component<IProps, IState> {
       browserWidth: window.innerWidth,
       lastUpdated: new Date(2019, 9 - 1, 12),
       //appKey: "landing"
-      appKey: "about"
+      appKey: "landing"
     };
     this.updateBrowserDim = this.updateBrowserDim.bind(this);
     this.updatePage = this.updatePage.bind(this);
@@ -103,10 +105,9 @@ class AppView extends React.Component<IProps, IState> {
         <div
           style={{
             height: this.state.browserHeight - 60,
-            width: this.state.browserWidth,
-            background: "#202B33",
-            overflow: "scroll"
+            width: this.state.browserWidth
           }}
+          className="app-view"
         >
           {this.loadPage(this.state.appKey)}
         </div>

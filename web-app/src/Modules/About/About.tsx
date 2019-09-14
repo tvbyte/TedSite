@@ -1,3 +1,4 @@
+import "./About.css";
 import * as React from "react";
 interface IProps {
   height: number;
@@ -5,16 +6,7 @@ interface IProps {
 const About: React.SFC<IProps> = props => {
   return (
     <div>
-      <div
-        style={{
-          position: "fixed",
-          margin:10,
-          right:0,
-          width: "58%",
-          textAlign: "center",
-          background: "rgba(72, 175, 240, .5)"
-        }}
-      >
+      <div className="about-text">
         <h1>About Ted McCulloch</h1>
         <div style={{ textAlign: "left", margin: 10 }}>
           <div>
@@ -47,7 +39,7 @@ const About: React.SFC<IProps> = props => {
           </ul>
         </div>
       </div>
-      <div style={{ width: "40%" }}>
+      <div className="about-image">
         <img
           height={props.height - 50}
           src={require("../../Media/ted_mcculloch.jpg")}

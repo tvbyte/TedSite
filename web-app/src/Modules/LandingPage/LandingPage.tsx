@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Tag, Icon } from "@blueprintjs/core";
+import { Button } from "@blueprintjs/core";
+import "./LandingPage.css";
 
 interface IProps {
   viewHeight: number;
@@ -16,19 +17,7 @@ class LandingPage extends React.Component<IProps, IState> {
     const height: number = this.props.viewHeight / 3 - 15;
     return (
       <div style={{ margin: 5 }}>
-        <div
-          style={{
-            textAlign: "left",
-            paddingLeft: 10,
-            overflow: "scroll",
-            border: "2px solid #5C7080",
-            borderRadius: "10px",
-            marginBottom: 10,
-            marginTop: 10,
-            background: "#293742",
-            color: "#E1E8ED"
-          }}
-        >
+        <div className="lp-display">
           <h1>Ted McCulloch's Websiste</h1>
           <div>
             In the age of <b>The Profile</b> it may seem silly to have a
@@ -38,17 +27,17 @@ class LandingPage extends React.Component<IProps, IState> {
           <div>
             I decided to make this website for several reasons:
             <ul>
-              <li style={{ color: "#48AFF0" }}>
+              <li className="blue-font">
                 to make it easy to find and contact me
               </li>
-              <li style={{ color: "#FF7373" }}>
-                to act as a hub between projects
+              <li className="red-font">
+                to act as a meaningful hub between projects
               </li>
 
-              <li style={{ color: "#3DCC91" }}>
+              <li className="green-font">
                 to make it easy for organizations to understand what I can offer
               </li>
-              <li style={{ color: "#FFB366" }}>
+              <li className="yellow-font">
                 to be a living document of my academic and work careers
               </li>
             </ul>
@@ -56,17 +45,11 @@ class LandingPage extends React.Component<IProps, IState> {
           <div>Please feel free to reach out!</div>
           <br />
         </div>
-        <div style={{ textAlign: "center" }}>
-          <table style={{ width: "100%" }}>
+        <div>
+          <table className="lp-table">
             <tbody>
               <tr>
-                <td
-                  style={{
-                    border: "1px solid #2B95D6",
-                    borderRadius: "10px",
-                    background: "#293742"
-                  }}
-                >
+                <td className="blue-border">
                   <Button
                     fill={true}
                     minimal={true}
@@ -96,13 +79,7 @@ class LandingPage extends React.Component<IProps, IState> {
                   </Button>
                 </td>
 
-                <td
-                  style={{
-                    border: "1px solid #F55656",
-                    borderRadius: "10px",
-                    background: "#293742"
-                  }}
-                >
+                <td className="red-border">
                   <Button
                     fill={true}
                     style={{ height: height }}
@@ -116,13 +93,7 @@ class LandingPage extends React.Component<IProps, IState> {
                 </td>
               </tr>
               <tr>
-                <td
-                  style={{
-                    border: "1px solid #15B371",
-                    borderRadius: "10px",
-                    background: "#293742"
-                  }}
-                >
+                <td className="green-border">
                   <Button
                     fill={true}
                     style={{ height: height }}
@@ -134,13 +105,7 @@ class LandingPage extends React.Component<IProps, IState> {
                     <h2>How I Can Help Out</h2>
                   </Button>
                 </td>
-                <td
-                  style={{
-                    border: "1px solid #F29D49",
-                    borderRadius: "10px",
-                    background: "#293742"
-                  }}
-                >
+                <td className="yellow-border">
                   <Button
                     fill={true}
                     minimal={true}
