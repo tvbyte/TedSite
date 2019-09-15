@@ -5,11 +5,13 @@
   "dependencies": {
     "@blueprintjs/core": "^3.18.1",
     "@types/jest": "24.0.18",
+    "@types/lodash": "^4.14.138",
     "@types/node": "12.7.5",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
     "@types/react-pdf": "^4.0.3",
     "@types/react-router-dom": "^4.3.5",
+    "lodash": "^4.17.15",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-pdf": "^4.1.0",

@@ -5,8 +5,13 @@
     background:#293742;
 }
 
-.course-body-text {
+.course-body {
     border-radius: 3px;
     padding-left: 10px;
     background: #30404D;
+}
+
+.course-body table {
+    width:100%;
+    text-align: center;
 }
