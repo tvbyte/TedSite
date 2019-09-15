@@ -18,22 +18,23 @@ const Resume: React.SFC<IProps> = props => {
     <div style={{ textAlign: "center" }}>
       <div style={{ display: "inline-block" }}>
         <br />
+        <Document file={require("../../Media/resume.pdf")}>
+          <Page pageNumber={2} width={props.viewHeight * 0.68} />
+        </Document>
+        <br /> <br />
         <Button
           intent={downloaded ? "success" : "none"}
           icon="arrow-down"
           onClick={triggerDownload}
         >
-          <a href={require("../../Media/resume.pdf")} download style={{textDecoration:'none', color: 'white'}}>
+          <a
+            href={require("../../Media/resume.pdf")}
+            download
+            style={{ textDecoration: "none", color: "white" }}
+          >
             Download Resume
           </a>
         </Button>
-        <br /> <br />
-        <Document file={require("../../Media/resume.pdf")}>
-          <Page
-            pageNumber={2}
-            width={props.viewHeight - props.viewHeight * 0.32}
-          />
-        </Document>
       </div>
     </div>
   );

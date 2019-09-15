@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { Tag, Tooltip } from "@blueprintjs/core";
-import './Contact.css';
+import "./Contact.css";
 interface IProps {}
 const Contact: React.SFC<IProps> = props => {
   const [copied, setCopied] = useState(false);
 
   return (
-    <div className='contact-display'>
+    <div className="contact-display">
       <h1>Contact</h1>
-      <div
-        className='contact-text'
-      >
-        Email Me At:
+      <div className="contact-text">
+        Email Me Directly At:
         <br />
         <Tooltip
           content={copied ? "copied!" : "click to copy to clipboard"}
@@ -32,8 +30,10 @@ const Contact: React.SFC<IProps> = props => {
           </Tag>
         </Tooltip>
         <div />
+        <i>or</i>
         <br />
         <i>fancy email form to come</i>
+        <br />
       </div>
     </div>
   );

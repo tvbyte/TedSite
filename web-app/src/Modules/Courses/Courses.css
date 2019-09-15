@@ -1,0 +1,12 @@
+.courses-title{
+    border:1px solid #30404D;
+    border-radius: 3px;
+    padding-left: 10px;
+    background:#293742;
+}
+
+.course-body-text {
+    border-radius: 3px;
+    padding-left: 10px;
+    background: #30404D;
+}
