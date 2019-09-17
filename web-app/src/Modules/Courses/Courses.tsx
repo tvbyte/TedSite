@@ -8,7 +8,6 @@ interface IProps {}
 const Courses: React.SFC<IProps> = props => {
   const [mathOpen, setMathOpen] = useState(true);
   const [cSOpen, setCSOpen] = useState(true);
-  const [bioOpen, setBioOpen] = useState(true);
   const [miscOpen, setMiscOpen] = useState(true);
 
   return (
@@ -221,23 +220,6 @@ const Courses: React.SFC<IProps> = props => {
         <Tag
           large
           fill
-          icon="globe"
-          intent="primary"
-          minimal
-          interactive
-          onClick={setBioOpen.bind(null, !bioOpen)}
-        >
-          <h2>Biology</h2>
-        </Tag>
-        <Collapse isOpen={bioOpen}>
-          <div className="course-body">
-            <CourseTable rows={[]} />
-          </div>
-        </Collapse>
-
-        <Tag
-          large
-          fill
           icon="book"
           intent="primary"
           minimal
@@ -248,7 +230,12 @@ const Courses: React.SFC<IProps> = props => {
         </Tag>
         <Collapse isOpen={miscOpen}>
           <div className="course-body">
-            {" "}
+            <Tag fill icon="globe" intent="success" minimal>
+              Bio
+            </Tag>
+            <Tag fill icon="edit" intent="success" minimal>
+              English
+            </Tag>
             <CourseTable rows={[]} />
           </div>
         </Collapse>

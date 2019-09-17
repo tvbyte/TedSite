@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as _ from "lodash";
+import './CourseTable.css';
 interface IProps {
   rows: ICTRow[];
 }
@@ -12,7 +13,7 @@ interface ICTRow {
 }
 const CourseTable: React.SFC<IProps> = props => {
   return (
-    <table>
+    <table className='course-table'>
       <tbody>
         <tr>
           <th>Course Name</th>
