@@ -117,6 +117,7 @@ const Courses: React.SFC<IProps> = props => {
                   hours: 4
                 }
               ]}
+              headers
             />
           </div>
         </Collapse>
@@ -213,6 +214,7 @@ const Courses: React.SFC<IProps> = props => {
                   hours: 4
                 }
               ]}
+              headers
             />
           </div>
         </Collapse>
@@ -230,13 +232,149 @@ const Courses: React.SFC<IProps> = props => {
         </Tag>
         <Collapse isOpen={miscOpen}>
           <div className="course-body">
+            <CourseTable rows={[]} headers />
+
             <Tag fill icon="globe" intent="success" minimal>
               Bio
             </Tag>
-            <Tag fill icon="edit" intent="success" minimal>
+            <CourseTable
+              rows={[
+                {
+                  name: "Cells, Physiology, and Development",
+                  number: "BIO150/151",
+                  year: "Fall 2015",
+                  college: "Smith College",
+                  hours: 5
+                },
+                {
+                  name: "Genetics, Evolution, and Molecular Biology",
+                  number: "BIO152/153",
+                  year: "Spring 2015",
+                  college: "Smith College",
+                  hours: 5
+                },
+                {
+                  name: "Biomathematics Bootcamp",
+                  number: "BMX120",
+                  year: "Interim 2015",
+                  college: "Smith College",
+                  hours: 2
+                },
+                {
+                  name: "Frontiers in Biomathematics",
+                  number: "BMX100",
+                  year: "Fall 2014",
+                  college: "Smith College",
+                  hours: 2
+                }
+              ]}
+              headers={false}
+            />
+
+            <Tag fill icon="paperclip" intent="danger" minimal>
+              Philosophy
+            </Tag>
+            <CourseTable
+              rows={[
+                {
+                  name: "Study of Buddhism",
+                  number: "BUS120",
+                  year: "Fall 2017",
+                  college: "Smith College",
+                  hours: 2
+                },
+                {
+                  name: "Issues in Queer Studies",
+                  number: "SWG100",
+                  year: "Spring 2015",
+                  college: "Smith College",
+                  hours: 2
+                },
+                {
+                  name: "Race, Class, Gender, and Sexuality",
+                  number: "IDP102",
+                  year: "Spring 2015",
+                  college: "Smith College",
+                  hours: 2
+                },
+                {
+                  name: "Wisdom of the Sages",
+                  number: "FYS139",
+                  year: "Fall 2014",
+                  college: "Smith College",
+                  hours: 4
+                }
+              ]}
+              headers={false}
+            />
+
+            <Tag fill icon="edit" intent="warning" minimal>
               English
             </Tag>
-            <CourseTable rows={[]} />
+            <CourseTable
+              rows={[
+                {
+                  name: "Reading Contemporary Poetry",
+                  number: "ENG112",
+                  year: "Fall 2014",
+                  college: "Smith College",
+                  hours: 2
+                }
+              ]}
+              headers={false}
+            />
+            <Tag fill icon="translate" intent="success" minimal>
+              French
+            </Tag>
+            <CourseTable
+              rows={[
+                {
+                  name: "Accelerated Intermediate French",
+                  number: "FRN102",
+                  year: "Spring 2015",
+                  college: "Smith College",
+                  hours: 5
+                },
+                {
+                  name: "Accelerated Elementary French",
+                  number: "FRN101",
+                  year: "Fall 2014",
+                  college: "Smith College",
+                  hours: 5
+                }
+              ]}
+              headers={false}
+            />
+            <Tag fill icon="bank-account" intent="danger" minimal>
+              Economics
+            </Tag>
+            <CourseTable
+              rows={[
+                {
+                  name: "Economic Game Theory",
+                  number: "ECO125",
+                  year: "Spring 2016",
+                  college: "Smith College",
+                  hours: 4
+                }
+              ]}
+              headers={false}
+            />
+            <Tag fill icon="film" intent="warning" minimal>
+              Film Studies
+            </Tag>
+            <CourseTable
+              rows={[
+                {
+                  name: "Introduction to Film Studies",
+                  number: "FLS150",
+                  year: "Fall 2015",
+                  college: "Smith College",
+                  hours: 4
+                }
+              ]}
+              headers={false}
+            />
           </div>
         </Collapse>
       </div>
