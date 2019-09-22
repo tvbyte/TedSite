@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
-import { Button } from "@blueprintjs/core";
+import { Button, Tooltip, Icon } from "@blueprintjs/core";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 interface IProps {
@@ -35,6 +35,23 @@ const Resume: React.SFC<IProps> = props => {
             Download Resume
           </a>
         </Button>
+        &nbsp;&nbsp;
+        <Tooltip
+          content={
+            <div>
+              <div>
+                Because of web scrapers, my personal phone number and primary
+                email address as well as those of any references aren't listed
+                on this resume or website.
+              </div>
+              <div>
+                You can easily get in touch with my via <b>tvmbyte@gmail.com</b>
+              </div>
+            </div>
+          }
+        >
+          <Icon icon="help" />
+        </Tooltip>
       </div>
     </div>
   );
